@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Figtree:wght@400;600&display=swap");
+
+:root {
+  --cork: #b98a5c;
+  --cork-dark: #8f6440;
+  --frame: #5a3b22;
+  --ink: #2b2118;
+  --web: #fff4a8;
+  --image: #c9ecff;
+  --bigdata: #ffd6c9;
+  --reeng: #d8f5c8;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Figtree", system-ui, sans-serif;
+  color: var(--ink);
+  background-color: var(--cork);
+  background-image:
+    radial-gradient(var(--cork-dark) 1px, transparent 1.5px),
+    radial-gradient(#caa073 1px, transparent 1.5px);
+  background-size: 14px 14px, 23px 23px;
+  background-position: 0 0, 7px 9px;
+}
+
+.board {
+  max-width: 1000px;
+  margin: 24px auto;
+  padding: 28px 24px 40px;
+  border: 14px solid var(--frame);
+  border-radius: 6px;
+  min-height: calc(100vh - 48px);
+}
+
+.board-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.board-header h1 {
+  font-family: "Kalam", cursive;
+  font-size: 2.6rem;
+  margin: 0;
+  color: #fff;
+  text-shadow: 2px 2px 0 var(--frame);
+}
+
+.board-count {
+  margin: 0;
+  background: #fff;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.add-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  background: #fffdf7;
+  padding: 14px;
+  border-radius: 4px;
+  box-shadow: 0 3px 0 var(--cork-dark);
+}
+
+.add-form input {
+  flex: 1 1 240px;
+  padding: 10px 12px;
+  font: inherit;
+  border: 2px solid var(--frame);
+  border-radius: 4px;
+}
+
+.add-form select {
+  padding: 10px;
+  font: inherit;
+  border: 2px solid var(--frame);
+  border-radius: 4px;
+  background: #fff;
+}
+
+.add-form button {
+  padding: 10px 18px;
+  font: inherit;
+  font-weight: 600;
+  color: #fff;
+  background: var(--frame);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-form button:hover { background: #3f2816; }
+
+.add-form :focus-visible {
+  outline: 3px solid #2f7de1;
+  outline-offset: 2px;
+}
+
+.form-error {
+  margin: 8px 0 0;
+  color: #fff;
+  background: #a3261b;
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.task-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 28px;
+  margin-top: 32px;
+}
+
+.task-card {
+  position: relative;
+  padding: 26px 16px 16px;
+  min-height: 150px;
+  box-shadow: 3px 5px 8px rgba(60, 35, 15, 0.35);
+  transform: rotate(-1.5deg);
+}
+
+.task-card:nth-child(even) { transform: rotate(1.5deg); }
+.task-card:nth-child(3n) { transform: rotate(-0.5deg); }
+
+.card-advanced-web-engineering { background: var(--web); }
+.card-digital-image-processing { background: var(--image); }
+.card-big-data-analytics       { background: var(--bigdata); }
+.card-software-re-engineering  { background: var(--reeng); }
+
+.pin {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  margin-left: -7px;
+  border-radius: 50%;
+  background: #d8342a;
+  box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.4);
+}
+
+.task-title {
+  font-family: "Kalam", cursive;
+  font-size: 1.35rem;
+  line-height: 1.3;
+  margin: 0 0 12px;
+}
+
+.task-category {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  opacity: 0.75;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (max-width: 500px) {
+  .board { border-width: 8px; padding: 18px 14px; }
+  .board-header h1 { font-size: 2rem; }
+}
